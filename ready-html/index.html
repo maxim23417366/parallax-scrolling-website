@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Енциклопеді</title>
+
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="libs/gsap/gsap.min.js" defer></script>
+	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/bfec730d56.js" crossorigin="anonymous"></script>
+	<script src="js/app.js" defer></script>
+
+</head>
+<body>
+  <div class="arrow">
+    <a href="#"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <div class="sidenav">
+    <a href="#home">Home</a>
+    <a href="#cave">Cave</a>
+    <a href="#desert">Desert</a>
+    <a href="#sea">Sea</a>
+  </div> 
+	<div class="wrapper">
+		<div class="content">
+
+			<header id="home" class="main-header">
+				<div class="layers">
+					<div class="layer__header">
+						<div class="layers__caption">Енциклопедія</div>
+						<div class="layers__title">Динозаврів</div>
+					</div>
+					<div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
+					<div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+					<div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+				</div> 
+			</header>
+
+			<article id="cave" class="main-article" style="background-image: url(img/dungeon.jpg);">
+				<div class="main-article__content">
+					<h2 class="main-article__header">To do a lot of things...</h2>
+					<p class="main-article__paragraph">saeasdzsffa</p>
+				</div>
+        
+
+			</article>
+      
+      <article id="desert" class="second-article" style="background-image: url(img/desert.png);">
+        <div class="second-article__content">
+          <h2 class="second-article__header">Пустеля</h2>
+          <p class="second-article__paragraph">Gobivenator</p>
+        </div>
+      </article>
+
+      <article  class="third-article" style="background-image: url(img/sea.png);">
+        <div class="third-article__content">
+          <h2 id="sea" class="third-article__header">Море</h2>
+          <p class="third-article__paragraph">Mosasauridae</p>
+        </div>
+        <div class="copy">ⓒ IO-34 Neporozhnii</div>
+      </article>
+      
+		</div>
+	</div>
+
+</body>
+</html>
