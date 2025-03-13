@@ -66,6 +66,9 @@ body {
 	z-index: 2;
 	transition: var(--transition);
 }
+.visible {
+  transform: translate3d(0, calc(var(--scrollTop) / -10.5), 0);
+}
 .layers__base {
   transform: translateY(calc(var(--scrollTop) / 100)); /* Змінюємо швидкість */
 	z-index: 0;
@@ -130,7 +133,7 @@ body {
 	will-change: transform;
 }
 .second-article {
-	--second-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	--second-article-transform: translate3d(0, calc(var(--scrollTop) / -10.5), 0);
 	min-height: 100vh;
 	background-size: cover;
 	background-position: center;
@@ -148,20 +151,22 @@ body {
 	text-transform: uppercase;
 	font-size: calc(var(--index) * 1.8);
 	letter-spacing: calc(var(--index) / 7.5);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
+	transform: var(--second-article-transform);
+	transform: none;
+  transition: transform 1s ease-out;
 	will-change: transform;
 }
 .second-article__paragraph {
 	max-width: calc(var(--index) * 30);
 	font-size: calc(var(--index) * .9);
 	margin-top: calc(var(--index) / 1.25);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
+	transform: var(--second-article-transform);
+	transform: none;
+  transition: transform 1s ease-out;
 	will-change: transform;
 }
 .third-article {
-  --third-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  --third-article-transform: translate3d(0, calc(var(--scrollTop) / -11.5), 0);
 	min-height: 100vh;
 	background-size: cover;
 	background-position: center;
@@ -179,16 +184,18 @@ body {
 	text-transform: uppercase;
 	font-size: calc(var(--index) * 1.8);
 	letter-spacing: calc(var(--index) / 7.5);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
+	transform: var(--third-article-transform);
+	transform: none;
+  transition: transform 1s ease-out;
 	will-change: transform;
 }
 .third-article__paragraph {
   max-width: calc(var(--index) * 30);
 	font-size: calc(var(--index) * .9);
 	margin-top: calc(var(--index) / 1.25);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
+	transform: var(--third-article-transform);
+	transform: none;
+  transition: transform 1s ease-out;
 	will-change: transform;
 }
 .copy {
