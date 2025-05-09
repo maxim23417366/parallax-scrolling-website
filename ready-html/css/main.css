@@ -70,7 +70,7 @@ body {
   transform: translate3d(0, calc(var(--scrollTop) / -10.5), 0);
 }
 .layers__base {
-  transform: translateY(calc(var(--scrollTop) / 100)); /* Змінюємо швидкість */
+  transform: translateY(calc(var(--scrollTop) / 10000)); /* Змінюємо швидкість */
 	z-index: 0;
 }
 .layers__middle {
@@ -98,106 +98,186 @@ body {
 	letter-spacing: calc(var(--index) / 3.5);
 	margin-top: calc(var(--index) * -.75);
 }
-.main-article {
-	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
-	min-height: 100vh;
-	background-size: cover;
-	background-position: center;
-	color: var(--text);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	text-align: center;
-  overflow: visible;
-	top: -1px;
-	z-index: 10;
+.sky-parallax .layer__header {
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 15px #13dcff;
+  z-index: 3;
 }
-.main-article__header {
-	text-transform: uppercase;
-	font-size: calc(var(--index) * 1.8);
-	letter-spacing: calc(var(--index) / 7.5);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
-	will-change: transform;
+.sky-parallax .layers__caption,
+.sky-parallax .layers__title {
+  position: relative;
+  z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
+  margin-top: 0; /* Прибираємо зайві відступи */
+  padding: 0 20px;
 }
-.main-article__paragraph {
-	max-width: calc(var(--index) * 30);
-	font-size: calc(var(--index) * .9);
-	margin-top: calc(var(--index) / 1.25);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
-	will-change: transform;
+.sky-parallax .layer {
+  height: 100vh; /* Висота шари на всю висоту екрану */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  will-change: transform;
+  transition: var(--transition);
 }
-.content {
-	will-change: transform;
+.sky-parallax .layer__header {
+  z-index: 5;
+  top: 10%; /* Центруємо текст по вертикалі */
+  transform: translateY(-50%); /* Вирівнювання тексту по центру */
 }
-.second-article {
-	--second-article-transform: translate3d(0, calc(var(--scrollTop) / -10.5), 0);
-	min-height: 100vh;
-	background-size: cover;
-	background-position: center;
-	color: var(--text);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	text-align: center;
-  overflow: visible;
-	top: -1px;
-	z-index: 5;
+.layers__sky-base {
+  transform: translateY(calc(var(--scrollTop) / 10000));
+  z-index: 0;
 }
-.second-article__header {
-	text-transform: uppercase;
-	font-size: calc(var(--index) * 1.8);
-	letter-spacing: calc(var(--index) / 7.5);
-	transform: var(--second-article-transform);
-	transform: none;
-  transition: transform 1s ease-out;
-	will-change: transform;
+.layers__sky-middle {
+  transform: translateY(calc(var(--scrollTop) / 5));
 }
-.second-article__paragraph {
-	max-width: calc(var(--index) * 30);
-	font-size: calc(var(--index) * .9);
-	margin-top: calc(var(--index) / 1.25);
-	transform: var(--second-article-transform);
-	transform: none;
-  transition: transform 1s ease-out;
-	will-change: transform;
+.layers__sky-front {
+  transform: translateY(calc(var(--scrollTop) / 4));
 }
-.third-article {
-  --third-article-transform: translate3d(0, calc(var(--scrollTop) / -11.5), 0);
-	min-height: 100vh;
-	background-size: cover;
-	background-position: center;
-	color: var(--text);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	text-align: center;
-  overflow: visible;
-	top: -1px;
-	z-index: 1;
+
+
+.desert-parallax .layer__header {
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 15px #ffba00;
+  z-index: 3;
 }
-.third-article__header {
-	text-transform: uppercase;
-	font-size: calc(var(--index) * 1.8);
-	letter-spacing: calc(var(--index) / 7.5);
-	transform: var(--third-article-transform);
-	transform: none;
-  transition: transform 1s ease-out;
-	will-change: transform;
+.desert-parallax .layers__caption,
+.desert-parallax .layers__title {
+  position: relative;
+  z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
+  margin-top: 0; /* Прибираємо зайві відступи */
+  padding: 0 20px;
 }
-.third-article__paragraph {
-  max-width: calc(var(--index) * 30);
-	font-size: calc(var(--index) * .9);
-	margin-top: calc(var(--index) / 1.25);
-	transform: var(--third-article-transform);
-	transform: none;
-  transition: transform 1s ease-out;
-	will-change: transform;
+.desert-parallax .layer {
+  height: 100vh; /* Висота шари на всю висоту екрану */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  will-change: transform;
+  transition: var(--transition);
 }
+.desert-parallax .layer__header {
+  z-index: 5;
+  top: 10%; /* Центруємо текст по вертикалі */
+  transform: translateY(-50%); /* Вирівнювання тексту по центру */
+}
+.layers__desert-base {
+  transform: translateY(calc(var(--scrollTop) / 10000));
+  z-index: 0;
+}
+.layers__desert-middle {
+  transform: translateY(calc(var(--scrollTop) / 5));
+}
+.layers__desert-front {
+  transform: translateY(calc(var(--scrollTop) / 4));
+}
+
+
+.sea-parallax .layer__header {
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 15px #00ffff;
+  z-index: 3;
+}
+.sea-parallax .layers__caption,
+.sea-parallax .layers__title {
+  position: relative;
+  z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
+  margin-top: 0; /* Прибираємо зайві відступи */
+  padding: 0 20px;
+}
+.sea-parallax .layer {
+  height: 100vh; /* Висота шари на всю висоту екрану */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  will-change: transform;
+  transition: var(--transition);
+}
+.sea-parallax .layer__header {
+  z-index: 5;
+  top: 10%; /* Центруємо текст по вертикалі */
+  transform: translateY(-50%); /* Вирівнювання тексту по центру */
+}
+.layers__sea-base {
+  transform: translateY(calc(var(--scrollTop) / 10000));
+  z-index: 0;
+}
+.layers__sea-middle {
+  transform: translateY(calc(var(--scrollTop) / 5));
+}
+.layers__sea-front {
+  transform: translateY(calc(var(--scrollTop) / 4));
+}
+
+.section-content {
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 20px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.toggle-text {
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.toggle-text:hover {
+  color: #7cf8ac;
+}
+
+.hidden-text {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease, opacity 0.8s ease, padding 0.5s ease;
+  font-size: 1.1rem;
+  color: #ffffff;
+  flex: 1;
+}
+
+.hidden-text.show {
+  max-height: 700px; /* Або більший, якщо потрібно більше простору */
+  opacity: 1;
+  padding-top: 15px;
+}
+
+.image-box {
+  flex-shrink: 0;
+  width: 400px;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.image-box img {
+  width: 100%;
+}
+
+
+
 .copy {
 	position: absolute;
 	bottom: calc(var(--index) * 2.5);
@@ -207,11 +287,11 @@ body {
 }
 
 .sidenav{
-  width: 100px;
+  width: 120px;
   height: 100%;
   background: none;
   position: fixed;
-  top: 200px;
+  top: 300px;
   left: 0;
   z-index: 100;
 }

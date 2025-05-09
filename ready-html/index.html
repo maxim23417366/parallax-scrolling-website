@@ -22,10 +22,10 @@
     <a href="#"><i class="fas fa-arrow-up"></i></a>
   </div>
   <div class="sidenav">
-    <a href="#home">Home</a>
-    <a href="#cave">Cave</a>
-    <a href="#desert">Desert</a>
-    <a href="#sea">Sea</a>
+    <a href="#home">Початок</a>
+    <a href="#sky">Літаючі</a>
+    <a href="#desert">Пустеля</a>
+    <a href="#sea">Море</a>
   </div> 
 	<div class="wrapper">
 		<div class="content">
@@ -42,30 +42,91 @@
 				</div> 
 			</header>
 
-			<article id="cave" class="main-article" style="background-image: url(img/dungeon.jpg);">
-				<div class="main-article__content">
-					<h2 class="main-article__header">To do a lot of things...</h2>
-					<p class="main-article__paragraph">saeasdzsffa</p>
-				</div>
-        
-
-			</article>
-      
-      <article id="desert" class="second-article" style="background-image: url(img/desert.png);">
-        <div class="second-article__content">
-          <h2 class="second-article__header">Пустеля</h2>
-          <p class="second-article__paragraph">Gobivenator</p>
+      <section id="sky" class="sky-parallax">
+        <div class="layers">
+          <div class="layer__header">
+            <div class="layers__caption">Літаючі</div>
+            <div class="layers__title">Pterosaures</div>
+            <div class="section-content">
+              <div>
+                <p class="toggle-text">Детальніше про цього динозавра</p>
+                <div class="hidden-text">
+                  <p>Птерозаври (Pterosauria) — вимерлий ряд плазунів мезозойської ери, що освоїли повітряне середовище проживання. Вони жили 210—65,5 млн років тому,
+                    одночасно з динозаврами і морськими ящерами. У наш час виділяють близько 60 родів птерозаврів, що об'єднуються в 16 родин. Знахідки птерозаврів украй рідкісні через погане збереження скелету.
+                    Анатомія птерозаврів значно відрізнялася від їх предків рептилій завдяки адаптації для польоту. Кістки птерозавра були порожніми та заповнені повітрям, так само як і кістки птахів.
+                     Вони мали кіль грудної клітини, яка була розвинена для посилення польотних м'язів і збільшений мозок який свідчить про функції пов'язані з польотом[4]. В деяких пізніших птерозаврів, хребетні кістки
+                      за плечима зрослися в структуру, що відома як notarium, що додавала жорсткості
+                     тулуба під час польоту, і забезпечувала надійну підтримку лопаткам (плеча).</p>
+                </div>
+              </div>
+              <div class="image-box">
+                <img src="img/pterosaur_example.png" alt="Pterosaur" />
+              </div>
+            </div>
+          </div>
+          <div class="layer layers__sky-base" style="background-image: url(img/sky_base.png);"></div>
+          <div class="layer layers__sky-middle" style="background-image: url(img/sky_middle.png);"></div>
+          <div class="layer layers__sky-front" style="background-image: url(img/sky_front.png);"></div>
         </div>
-      </article>
-
-      <article  class="third-article" style="background-image: url(img/sea.png);">
-        <div class="third-article__content">
-          <h2 id="sea" class="third-article__header">Море</h2>
-          <p class="third-article__paragraph">Mosasauridae</p>
-        </div>
-        <div class="copy">ⓒ IO-34 Neporozhnii</div>
-      </article>
+      </section>
       
+      <section id="desert" class="desert-parallax">
+        <div class="layers">
+          <div class="layer__header">
+            <div class="layers__caption">Пустеля</div>
+            <div class="layers__title">Gobivenator</div>
+            <div class="section-content">
+              <div>
+                <p class="toggle-text">Детальніше про цього динозавра</p>
+                <div class="hidden-text">
+                  <p>Gobivenator — рід троодонтів, відомий із пізньої кампанської формації Дядохта в центральній частині пустелі Гобі,
+                     Монголія. Він містить один вид, Gobivenator mongoliensis. G. mongoliensis відомий з однієї особини,
+                     яка представляє найбільш повний зразок пізньокрейдяного троодонтида, наразі відомого. 
+                     Гобівенатор був невеликим тероподом, довжиною 1,7 метра і вагою 9 кілограмів. Він належить до родини Troodontidae,
+                     групи невеликих, схожих на птахів, грациальних манірапторів. Усі троодонтиди мають багато унікальних особливостей черепа,
+                     таких як тісно розташовані зуби на нижній щелепі та велика кількість зубів. Троодонтиди мають серповидні кігті та хижі руки,
+                     а також одні з найвищих непташиних коефіцієнтів енцефалізації, що означає, що вони були розвиненими в поведінці та мали гострі чуття</p>
+                </div>
+              </div>
+              <div class="image-box">
+                <img src="img/gobivenatorr_example.png" alt="Gobivenator" />
+              </div>
+            </div>
+          </div>
+          <div class="layer layers__desert-base" style="background-image: url(img/desert.png);"></div>
+          <div class="layer layers__desert-middle" style="background-image: url(img/desert_layer-middle.png);"></div>
+          <div class="layer layers__desert-front" style="background-image: url(img/desert_layer-front.png);"></div>
+      </section>
+
+
+      <section id="sea" class="sea-parallax">
+        <div class="layers">
+          <div class="layer__header">
+            <div class="layers__caption">Море</div>
+            <div class="layers__title">Mosasauridae</div>
+            <div class="section-content">
+              <div>
+                <p class="toggle-text">Детальніше про цього динозавра</p>
+                <div class="hidden-text">
+                  <p>Мозазаври (Mosasauridae, від лат. Mosa, що значить Маас і грец. σαύρος — «ящір») — 
+                     викопна група великих водних рептилій родини мозазаврів (Mosasauridae), що існували
+                     в пізній крейді. Їхні перші викопні рештки були знайдені у вапняковому кар'єрі в Маастрихті на річці Маас в 1764 році.
+                     Вони належать до ряду Squamata, лускаті, до якого належать сучасні ящірки та змії.
+                     Протягом останніх 20 мільйонів років крейдяного періоду (туронсько-маастрихтський вік), з вимиранням іхтіозаврів та пліозаврів,
+                     мозазаври стали домінівними морськими хижаками. Самі вони вимерли в результаті масового крейдового вимирання, близько 66 мільйонів років тому.
+                     Мозазаври дихали повітрям, були потужними плавцями й добре пристосованими до життя в теплих мілководних внутрішніх морях, що переважали в пізній
+                     крейдяний період.</p>
+                </div>
+              </div>
+              <div class="image-box">
+                <img src="img/mosasauridae_example.png" alt="Mosasauridae" />
+              </div>
+            </div>
+          </div>
+          <div class="layer layers__sea-base" style="background-image: url(img/sea.png);"></div>
+          <div class="layer layers__sea-middle" style="background-image: url(img/sea_layer-middle.png);"></div>
+          <div class="layer layers__sea-front" style="background-image: url(img/sea_layer-front.png);"></div>
+      </section>
 		</div>
 	</div>
 
