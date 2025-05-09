@@ -110,12 +110,12 @@ body {
 .sky-parallax .layers__caption,
 .sky-parallax .layers__title {
   position: relative;
-  z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
-  margin-top: 0; /* Прибираємо зайві відступи */
+  z-index: 2; 
+  margin-top: 0px; 
   padding: 0 20px;
 }
 .sky-parallax .layer {
-  height: 100vh; /* Висота шари на всю висоту екрану */
+  height: 100vh;
   width: 100%;
   position: absolute;
   top: 0;
@@ -134,10 +134,10 @@ body {
   z-index: 0;
 }
 .layers__sky-middle {
-  transform: translateY(calc(var(--scrollTop) / 5));
+  transform: translateY(calc(var(--scrollTop) / 10));
 }
 .layers__sky-front {
-  transform: translateY(calc(var(--scrollTop) / 4));
+  transform: translateY(calc(var(--scrollTop) / 3));
 }
 
 
@@ -154,7 +154,7 @@ body {
 .desert-parallax .layers__title {
   position: relative;
   z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
-  margin-top: 0; /* Прибираємо зайві відступи */
+  margin-top: 30px; /* Прибираємо зайві відступи */
   padding: 0 20px;
 }
 .desert-parallax .layer {
@@ -197,7 +197,7 @@ body {
 .sea-parallax .layers__title {
   position: relative;
   z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
-  margin-top: 0; /* Прибираємо зайві відступи */
+  margin-top: 30px; /* Прибираємо зайві відступи */
   padding: 0 20px;
 }
 .sea-parallax .layer {

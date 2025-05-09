@@ -15,8 +15,8 @@ gsap.utils.toArray(".sky-parallax .layer").forEach(layer => {
   let depth = 0;
 
   if (layer.classList.contains('layers__sky-base')) depth = 20;
-  if (layer.classList.contains('layers__sky-middle')) depth=100;
-  if (layer.classList.contains('layers__sky-front')) depth = 100;
+  if (layer.classList.contains('layers__sky-middle')) depth=70;
+  if (layer.classList.contains('layers__sky-front')) depth = 120;
 
   gsap.to(layer, {
     y: `${depth}px`,
@@ -60,7 +60,7 @@ gsap.fromTo(".sky-parallax .layer__header",
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".sky-parallax .layer__header",
-      start: "top 80%", // коли 20% заголовка видно
+      start: "top 50%", // коли 20% заголовка видно
       toggleActions: "play none none reverse"
     }
   }
@@ -118,7 +118,7 @@ gsap.fromTo(".desert-parallax .layer__header",
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".desert-parallax .layer__header",
-      start: "top 80%", // коли 20% заголовка видно
+      start: "top 50%", // коли 20% заголовка видно
       toggleActions: "play none none reverse"
     }
   }
@@ -156,7 +156,7 @@ gsap.fromTo(".sea-parallax .layer__header",
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".sea-parallax .layer__header",
-      start: "top 80%", // коли 20% заголовка видно
+      start: "top 50%", // коли 20% заголовка видно
       toggleActions: "play none none reverse"
     }
   }
