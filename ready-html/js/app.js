@@ -14,9 +14,9 @@ ScrollSmoother.create({
 gsap.utils.toArray(".sky-parallax .layer").forEach(layer => {
   let depth = 0;
 
-  if (layer.classList.contains('layers__sky-base')) depth = 20;
-  if (layer.classList.contains('layers__sky-middle')) depth=70;
-  if (layer.classList.contains('layers__sky-front')) depth = 120;
+  if (layer.classList.contains('layers__sky-base')) depth = 30;
+  if (layer.classList.contains('layers__sky-middle')) depth=50;
+  if (layer.classList.contains('layers__sky-front')) depth = 70;
 
   gsap.to(layer, {
     y: `${depth}px`,
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 gsap.utils.toArray(".desert-parallax .layer").forEach(layer => {
   let depth = 0;
 
-  if (layer.classList.contains('layers__desert-base')) depth = 20;
+  if (layer.classList.contains('layers__desert-base')) depth = 0;
   if (layer.classList.contains('layers__desert-middle')) depth=100;
   if (layer.classList.contains('layers__desert-front')) depth = 150;
 
@@ -97,7 +97,7 @@ gsap.utils.toArray(".desert-parallax .layer").forEach(layer => {
     y: `${depth}px`,
     ease: "none",
     scrollTrigger: {
-      trigger: ".sky-parallax",
+      trigger: ".desert-parallax",
       start: "top bottom",
       end: "bottom top",
       scrub: true,
