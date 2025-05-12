@@ -1,7 +1,8 @@
+//Збереження scroll-позиції в змінну CSS
 window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scrollTop', `${window.scrollY}px`); // Використовуємо window.scrollY
 });
-
+//Ініціалізація ScrollSmoother
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
@@ -10,7 +11,7 @@ ScrollSmoother.create({
   content: '.content',
   smooth: false
 });
-
+//Паралакс для секції sky-parallax
 gsap.utils.toArray(".sky-parallax .layer").forEach(layer => {
   let depth = 0;
 
@@ -30,24 +31,7 @@ gsap.utils.toArray(".sky-parallax .layer").forEach(layer => {
     }
   });
 });
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.utils.toArray("article").forEach(article => {
-    gsap.to(article, {
-        backgroundPosition: "50% 100%", // змінює позицію фону під час скролу
-        ease: "none",
-        scrollTrigger: {
-            trigger: article,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true // плавний ефект під час прокручування
-        }
-    });
-});
-
-// Анімація заголовка в cave-паралаксі при появі
+// Анімація заголовка в sky-parallax при появі
 gsap.fromTo(".sky-parallax .layer__header", 
   {
     y: 50,
@@ -60,36 +44,16 @@ gsap.fromTo(".sky-parallax .layer__header",
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".sky-parallax .layer__header",
-      start: "top 50%", // коли 20% заголовка видно
+      start: "top 50%", // коли 50% заголовка видно
       toggleActions: "play none none reverse"
     }
   }
 );
-
-document.addEventListener("DOMContentLoaded", function () {
-  let observerOptions = {
-      root: null, // Відстежуємо відносно вікна браузера
-      threshold: 0.1 // 10% елемента має бути видно
-  };
-
-  let observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-          } else {
-              entry.target.classList.remove("visible");
-          }
-      });
-  }, observerOptions);
-
-  document.querySelectorAll(".second-article__header, .second-article__paragraph, .third-article__header, .third-article__paragraph")
-      .forEach(element => observer.observe(element));
-});
-
+// Паралакс для desert-parallax
 gsap.utils.toArray(".desert-parallax .layer").forEach(layer => {
   let depth = 0;
 
-  if (layer.classList.contains('layers__desert-base')) depth = 0;
+  if (layer.classList.contains('layers__desert-base')) depth = 30;
   if (layer.classList.contains('layers__desert-middle')) depth=100;
   if (layer.classList.contains('layers__desert-front')) depth = 150;
 
@@ -123,11 +87,11 @@ gsap.fromTo(".desert-parallax .layer__header",
     }
   }
 );
-
+// Паралакс для sea-parallax
 gsap.utils.toArray(".sea-parallax .layer").forEach(layer => {
   let depth = 0;
 
-  if (layer.classList.contains('layers__sea-base')) depth = 20;
+  if (layer.classList.contains('layers__sea-base')) depth = 30;
   if (layer.classList.contains('layers__sea-middle')) depth=110;
   if (layer.classList.contains('layers__sea-front')) depth = 50;
 
@@ -161,7 +125,7 @@ gsap.fromTo(".sea-parallax .layer__header",
     }
   }
 );
-
+// Розгортання прихованого тексту
 document.addEventListener("DOMContentLoaded", function () {
   const toggles = document.querySelectorAll(".toggle-text");
 

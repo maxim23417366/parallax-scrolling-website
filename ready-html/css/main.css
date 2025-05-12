@@ -1,8 +1,10 @@
+/* Скидання відступів та встановлення sizing: border-box */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+/* Плавна прокрутка та відступ зверху */
 html{
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -12,6 +14,7 @@ html{
 	--text: #e7e7e0;
 	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
 }
+/* Шрифти */
 @font-face {
 	font-family: raleway_f;
 	src: url(../fonts/raleway-regular.woff2);
@@ -21,11 +24,13 @@ html{
 	src: url(../fonts/raleway-black.woff2);
 	font-weight: 900;
 }
+/* Базові налаштування */
 body {
 	background-color: #000000;
 	font-family: raleway_f, sans-serif;
 	line-height: 1.55;
 }
+/* мінімальна висота на висоту вікна */
 .wrapper, .content {
   min-height: 100vh;
 }
@@ -35,6 +40,7 @@ body {
   background-size: cover;
   background-position: center;
 }
+/* Ефект переходу  */
 .main-header::after {
 	content: '';
 	position: absolute;
@@ -66,11 +72,7 @@ body {
 	z-index: 2;
 	transition: var(--transition);
 }
-.visible {
-  transform: translate3d(0, calc(var(--scrollTop) / -10.5), 0);
-}
 .layers__base {
-
 	z-index: 0;
 }
 .layers__middle {
@@ -106,7 +108,7 @@ body {
   background-size: cover;
   background-position: center;
 }
-
+/* Блок з "Літаючими" */
 .sky-parallax .layer__header {
   position: absolute;
   top: 60%;
@@ -133,7 +135,6 @@ body {
   will-change: transform;
   transition: var(--transition);
 }
-
 .sky-parallax .layer__header {
   z-index: 5;
   top: 10%; /* Центруємо текст по вертикалі */
@@ -149,8 +150,21 @@ body {
 .layers__sky-front {
   transform: translateY(calc(var(--scrollTop) / 3));
 }
+.sky-parallax::after{
+  content: '';
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: calc(var(--index) * 10);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: calc(var(--index) * -4.5);
+  pointer-events: none;
+  background-image: url(../img/ground1.png);
+}
 
-
+/* Блок з "Пустелею" */
 .desert-parallax .layer__header {
   position: absolute;
   top: 60%;
@@ -163,7 +177,7 @@ body {
 .desert-parallax .layers__caption,
 .desert-parallax .layers__title {
   position: relative;
-  z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
+  z-index: 2; 
   margin-top: 30px; /* Прибираємо зайві відступи */
   padding: 0 20px;
 }
@@ -192,8 +206,22 @@ body {
 .layers__desert-front {
   transform: translateY(calc(var(--scrollTop) / 4));
 }
+.desert-parallax::after{
+  content: '';
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: calc(var(--index) * 10);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: calc(var(--index) * -4.5);
+  pointer-events: none;
+  background-image: url(../img/ground1.png);
+}
 
 
+/* Блок з "Морем" */
 .sea-parallax .layer__header {
   position: absolute;
   top: 60%;
@@ -206,7 +234,7 @@ body {
 .sea-parallax .layers__caption,
 .sea-parallax .layers__title {
   position: relative;
-  z-index: 2; /* Дозволяє тексту залишатися поверх фонів */
+  z-index: 2;
   margin-top: 30px; /* Прибираємо зайві відступи */
   padding: 0 20px;
 }
@@ -235,7 +263,7 @@ body {
 .layers__sea-front {
   transform: translateY(calc(var(--scrollTop) / 4));
 }
-
+/* Контент */
 .section-content {
   max-width: 1000px;
   margin: 50px auto;
@@ -247,7 +275,7 @@ body {
   flex-wrap: nowrap;
   flex-direction: row;
 }
-
+/* "Кнопка" читати більше */
 .toggle-text {
   font-size: 1.5rem;
   color: #ffffff;
@@ -255,10 +283,13 @@ body {
   text-decoration: underline;
   transition: color 0.3s ease;
 }
+/* Зміна кольору при наведені */
 .toggle-text:hover {
+  transform: translateY(-3px);
+  transition: 0.5s;
   color: #7cf8ac;
 }
-
+/* "Прихований" текст */
 .hidden-text {
   max-height: 0;
   opacity: 0;
@@ -268,33 +299,25 @@ body {
   color: #ffffff;
   flex: 1;
 }
-
+/* Текст який "показується" */
 .hidden-text.show {
   max-height: 700px; /* Або більший, якщо потрібно більше простору */
   opacity: 1;
   padding-top: 15px;
   font-size: 1rem;
 }
-
+/* Розміщення зображення */
 .image-box {
   flex-shrink: 0;
   width: 400px;
   margin-left: auto;
   margin-top: auto;
 }
-
+/* Зображення */
 .image-box img {
   width: 100%;
 }
-
-.copy {
-	position: absolute;
-	bottom: calc(var(--index) * 2.5);
-	opacity: .45;
-	font-size: calc(var(--index) * .75);
-	letter-spacing: calc(var(--index) / 37.5);
-}
-
+/* Меню */
 .sidenav{
   width: 120px;
   height: 100%;
@@ -318,10 +341,12 @@ body {
   text-align: center;
   transition: 0.8s;
 }
+/* Анімація при наведенні */
 .sidenav a:hover {
   transform: translateY(-5px);
   color: #c99797;
 }
+/* Стрілка вгору */
 .arrow{
   position: fixed;
   bottom: 30px;
@@ -341,35 +366,18 @@ body {
   border-radius: 20px;
   transition: 0.8s;
 }
+/* Анімація при наведенні */
 .arrow a:hover{
   transform: translateY(-5px);
   color: #c99797;
 }
-
-.sky-parallax::after,
-.desert-parallax::after,
-.sea-parallax::after {
-  content: '';
-  position: absolute;
-  z-index: 20;
-  width: 100%;
-  height: calc(var(--index) * 10);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  bottom: calc(var(--index) * -4.5);
-  pointer-events: none;
-}
-
-/* Приклади переходів (зображення можна замінити на інші для візуального ефекту) */
-.sky-parallax::after {
-  background-image: url(../img/ground.png);
-}
-
-.desert-parallax::after {
-  background-image: url(../img/ground.png);
-}
-
-.sea-parallax::after {
-  background-image: url(../img/ground.png);
+/* Підпис знизу сторінки */
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 2.5);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+  z-index: 100;
+  color: #ffffff;
 }
